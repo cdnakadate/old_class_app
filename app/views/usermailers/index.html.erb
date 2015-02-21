@@ -1,0 +1,29 @@
+<h1>Listing usermailers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Login</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usermailers.each do |usermailer| %>
+      <tr>
+        <td><%= usermailer.name %></td>
+        <td><%= usermailer.email %></td>
+        <td><%= usermailer.login %></td>
+        <td><%= link_to 'Show', usermailer %></td>
+        <td><%= link_to 'Edit', edit_usermailer_path(usermailer) %></td>
+        <td><%= link_to 'Destroy', usermailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usermailer', new_usermailer_path %>
